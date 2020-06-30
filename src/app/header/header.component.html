@@ -6,15 +6,14 @@
 
     <div class="collapse navbar-collapse" id="headerNavbar">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a href="#" class="nav-link">
+            <li class="nav-item" [ngClass]="{active:currentTab=='recipe'}" >
+                <a href="#" class="nav-link" (click)="tabChanged('recipe')">
                     Recipes
-                    <!-- <span class="sr-only">(current)</span> -->
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link">
+            <li class="nav-item" [ngClass]="{active:currentTab=='shopping'}">
+                <a href="#" class="nav-link" (click)="tabChanged('shopping')">
                     Shopping List
                 </a>
             </li>
