@@ -1,8 +1,8 @@
-<a href="#" class="list-group-item list-group-item-action">
+<a href="#" class="list-group-item list-group-item-action" (click)="onSelected()">
     <div class="d-flex w-80 justify-content-between">
         <span>
-            <h4 class="list-group-item-heading">Recipe Name : {{ recipeItem.name }}</h4>
-            <p class="list-group-item-text">Description : {{ recipeItem.description }}</p>
+            <h4 class="list-group-item-heading">{{ recipeItem.name }}</h4>
+            <p class="list-group-item-text">{{ recipeItem.description }}</p>
         </span>
         <img
         [src]="recipeItem.imagePath"
