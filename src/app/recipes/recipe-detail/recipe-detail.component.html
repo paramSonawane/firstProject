@@ -13,7 +13,7 @@
             Manage Recipe</button>
 
             <div class="dropdown-menu" aria-labelledby="manageRecipeBtn">
-                <a href="#" class="dropdown-item">Add To Shopping List</a>
+                <a (click)="onAddToShoppingList()" class="dropdown-item">Add To Shopping List</a>
                 <a href="#" class="dropdown-item">Edit Recipe</a>
                 <a href="#" class="dropdown-item">Delete Recipe</a>
             </div>
@@ -22,19 +22,22 @@
 </div>
 
 <div class="row">
-    <div class="col-xs-12">
-        <img src="{{recipe.imagePath}}" style="max-width: 100%;"/>
+    <div class="col-6">
+        <img src="{{ recipe.imagePath }}" style="max-width: 100%;"/>
+    </div>
+    <div class="col-6">
+        <h3>Ingredients : </h3>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center"
+                *ngFor="let item of recipe.ingredients">
+                {{ item.name }}<span class="badge badge-primary badge-pill">{{ item.amount }}</span>
+            </li>
+        </ul>
     </div>
 </div>
-
 <div class="row">
-    <div class="col-xs-12">
-        {{recipe.description}}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12">
-        Ingredients
+    <div class="col-12">
+        <h3>Description : </h3>
+        <p class="text-break"> &nbsp; {{ recipe.description }}</p>
     </div>
 </div>
