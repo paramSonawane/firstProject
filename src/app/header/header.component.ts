@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
   @Output() onNavbarClicked = new EventEmitter<string>();
 
 
-  currentTab:string = "recipe";
+  currentTab :string = "recipe";
   constructor() {
   }
 
